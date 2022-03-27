@@ -34,16 +34,31 @@ public class Flower
         this.flowerSize = size;
         this.flowerHeight = stem;
         this.color = col;
+        
+        // set top, left and bottom
+        this.setTop();
+        this.setLeft();
+        this.setBottom();
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Set left
      */
-    public void sampleMethod()
-    {
-        // put your code here
+    public void setLeft() {
+        this.left = this.flowerX - this.flowerSize/2.0;
+    }
+    
+    /**
+     * Set top
+     */
+    public void setTop() {
+        this.top = this.flowerY - this.flowerHeight/2.0;
+    }
+    
+    /**
+     * Set bottom
+     */
+    public void setBottom() {
+        this.bottom = this.flowerY + this.flowerHeight;
     }
 }
