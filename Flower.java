@@ -66,7 +66,7 @@ public class Flower
      * Draw the flower on screen
      */
     public void draw() { 
-        //draw stem
+        // draw stem
         UI.setColor(Color.green); // set colour of stem
         UI.setLineWidth(2);       // set width of stem
         UI.drawLine(flowerX, flowerY, flowerX, bottom); // draw in stem
@@ -83,5 +83,22 @@ public class Flower
     public void erase() {
         final int BUFFER = 1;
         UI.eraseRect(left, top, flowerSize+BUFFER, bottom+BUFFER);
+    }
+    
+    /**
+     * Make the flower grow
+     */
+    public void grow() {
+        // erase the flower
+        this.erase();
+        
+        // increase the size
+        this.flowerY -= 10; // increase the height
+        this.flowerSize += 10; // increase the bulb
+        this.setTop(); // set the top as new value
+        this.setLeft(); // set the left as new value
+        
+        // draw flower again
+        this.draw();
     }
 }
